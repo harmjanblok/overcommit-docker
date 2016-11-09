@@ -12,9 +12,6 @@ RUN bundle install --jobs 4
 RUN chown -R nobody:nogroup ${HOME}
 USER nobody
 
-ADD docker-entrypoint.sh /
-
 WORKDIR /usr/src/app
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["overcommit", "-r"]
