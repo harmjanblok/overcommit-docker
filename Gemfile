@@ -2,5 +2,6 @@
 source 'https://rubygems.org'
 
 gem 'overcommit'
+gem 'rake'
 gem 'reek'
 gem 'rubocop'

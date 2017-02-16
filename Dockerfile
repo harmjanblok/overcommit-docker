@@ -1,7 +1,4 @@
-FROM ruby:2.3.1
-
-# fixes: https://github.com/bundler/bundler/issues/4576
-RUN gem install bundler
+FROM ruby:2.4
 
 ENV HOME /overcommit
 WORKDIR ${HOME}
