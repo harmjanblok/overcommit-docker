@@ -17,6 +17,11 @@ build:
 		--tag harmjanblok/$(PROJECT):$(VERSION) \
 		.
 
+push:
+	git tag v$(VERSION)
+	git push origin master
+	git push --tags
+
 test:
 	docker run \
 		--rm \
