@@ -6,7 +6,7 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
-    childprocess (0.5.9)
+    childprocess (0.7.1)
       ffi (~> 1.0, >= 1.0.11)
     codeclimate-engine-rb (0.4.0)
       virtus (~> 1.0)
@@ -15,11 +15,11 @@ GEM
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     equalizer (0.0.11)
-    ffi (1.9.17)
+    ffi (1.9.18)
     ice_nine (0.11.2)
-    iniparse (1.4.2)
-    overcommit (0.38.0)
-      childprocess (~> 0.5.8)
+    iniparse (1.4.4)
+    overcommit (0.41.0)
+      childprocess (~> 0.6, >= 0.6.3)
       iniparse (~> 1.4)
     parser (2.3.3.1)
       ast (~> 2.2)
@@ -55,4 +55,4 @@ DEPENDENCIES
   rubocop
 
 BUNDLED WITH
-   1.13.6
+   1.15.4
