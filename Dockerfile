@@ -1,6 +1,6 @@
-FROM ruby:2.6
+FROM ruby:2.6-alpine
 
-RUN apt-get update && apt-get install -y python3-pip
+RUN apk add python3 make g++ git
 RUN pip3 install --upgrade yamllint
 
 ENV HOME /overcommit
