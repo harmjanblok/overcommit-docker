@@ -1,7 +1,7 @@
 FROM ruby:2.6
 
-RUN apt-get update && apt-get install -y python-pip python-dev
-RUN pip install --upgrade yamllint
+RUN apt-get update && apt-get install -y python3-pip
+RUN pip3 install --upgrade yamllint
 
 ENV HOME /overcommit
 WORKDIR ${HOME}
