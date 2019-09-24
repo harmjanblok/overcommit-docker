@@ -1,6 +1,21 @@
-FROM ruby:2.6
+FROM golang:1.12-alpine AS builder
+ENV JSONNET_VERSION="v0.14.0"
 
-RUN apt-get update && apt-get install -y python3-pip
+RUN apk add --update ca-certificates git 
+RUN apk -U add build-base
+
+WORKDIR /opt
+RUN git clone https://github.com/google/jsonnet
+RUN cd jsonnet && \
+    git checkout ${JSONNET_VERSION} && \
+    make
+
+FROM ruby:2.6-alpine
+
+### Jsonnet 
+COPY --from=builder /opt/jsonnet/jsonnetfmt /usr/local/bin
+
+RUN apk add  --update ca-certificates --no-cache libstdc++ python3 make g++ git bash
 RUN pip3 install --upgrade yamllint
 
 ENV HOME /overcommit
@@ -15,7 +30,7 @@ RUN git config --global user.email johndoe@example.com
 
 RUN chown -R nobody:nogroup ${HOME}
 USER nobody
-
+SHELL ["/bin/bash"]
 WORKDIR /usr/src/app
 
 CMD ["overcommit", "-r"]
