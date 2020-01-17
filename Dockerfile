@@ -1,7 +1,10 @@
 FROM alpine:latest AS builder
 ENV JSONNET_VERSION="v0.14.0"
 
-RUN apk add --update ca-certificates git build-base
+RUN apk add --update \
+      build-base \
+      ca-certificates \
+      git
 
 WORKDIR /opt
 RUN git clone https://github.com/google/jsonnet
@@ -14,7 +17,14 @@ FROM ruby:2.6-alpine
 ### Jsonnet
 COPY --from=builder /opt/jsonnet/jsonnetfmt /usr/local/bin
 
-RUN apk add --update ca-certificates --no-cache libstdc++ python3 make g++ git bash
+RUN apk add --no-cache --update \
+      bash \
+      ca-certificates \
+      g++ \
+      git \
+      libstdc++ \
+      make \
+      python3
 RUN pip3 install --upgrade yamllint
 
 ENV HOME /overcommit
