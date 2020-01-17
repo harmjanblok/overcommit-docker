@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 PROJECT := overcommit
-VERSION := 0.49.1-2
+VERSION := 0.52.1-0
 
 # Declare all targets as phony targets
 # https://www.gnu.org/software/make/manual/make.html#Phony-Targets
