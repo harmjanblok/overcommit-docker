@@ -22,6 +22,7 @@ RUN apk add --no-cache --update \
       ca-certificates \
       g++ \
       git \
+      go \
       libstdc++ \
       make \
       python3
