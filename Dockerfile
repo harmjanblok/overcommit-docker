@@ -1,5 +1,5 @@
 FROM alpine:latest AS builder
-ENV JSONNET_VERSION="v0.14.0"
+ENV JSONNET_VERSION="v0.15.0"
 
 RUN apk add --update \
       build-base \
@@ -12,9 +12,9 @@ RUN cd jsonnet && \
     git checkout ${JSONNET_VERSION} && \
     make
 
-FROM ruby:2.6-alpine
 
-### Jsonnet
+FROM ruby:2.7-alpine
+
 COPY --from=builder /opt/jsonnet/jsonnetfmt /usr/local/bin
 
 RUN apk add --no-cache --update \
