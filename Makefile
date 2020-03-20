@@ -22,6 +22,9 @@ push:
 	git push origin master
 	git push --tags
 
+shell: build
+	docker run -it --rm harmjanblok/$(PROJECT):$(VERSION) bash
+
 test:
 	docker run \
 		--rm \
