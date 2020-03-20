@@ -25,7 +25,8 @@ RUN apk add --no-cache --update \
       go \
       libstdc++ \
       make \
-      python3
+      python3 \
+      shellcheck
 RUN pip3 install --upgrade yamllint
 
 ENV HOME /overcommit
