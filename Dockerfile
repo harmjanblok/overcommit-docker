@@ -1,5 +1,5 @@
 FROM alpine:latest AS builder
-ENV JSONNET_VERSION="v0.15.0"
+ENV JSONNET_VERSION="v0.16.0"
 
 RUN apk add --update \
       build-base \
