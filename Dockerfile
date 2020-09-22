@@ -25,6 +25,7 @@ RUN apk add --no-cache --update \
       go \
       libstdc++ \
       make \
+      py3-pip \
       python3 \
       shellcheck
 RUN pip3 install --upgrade yamllint
