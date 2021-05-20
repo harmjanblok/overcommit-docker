@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 PROJECT := overcommit
-VERSION := 0.57.0-1
+VERSION := 0.57.0-2
 
 # Declare all targets as phony targets
 # https://www.gnu.org/software/make/manual/make.html#Phony-Targets
@@ -14,6 +14,7 @@ build:
 	docker build \
 		--build-arg http_proxy=$(http_proxy) \
 		--build-arg https_proxy=$(https_proxy) \
+		--build-arg no_proxy=$(no_proxy) \
 		--pull \
 		--tag harmjanblok/$(PROJECT):$(VERSION) \
 		.
