@@ -2,47 +2,66 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
-    childprocess (4.0.0)
+    chef-utils (17.6.18)
+      concurrent-ruby
+    childprocess (4.1.0)
+    concurrent-ruby (1.1.9)
     iniparse (1.5.0)
+    kramdown (2.3.1)
+      rexml
+    kramdown-parser-gfm (1.1.0)
+      kramdown (~> 2.0)
     kwalify (0.7.2)
-    overcommit (0.57.0)
+    mdl (0.11.0)
+      kramdown (~> 2.3)
+      kramdown-parser-gfm (~> 1.1)
+      mixlib-cli (~> 2.1, >= 2.1.1)
+      mixlib-config (>= 2.2.1, < 4)
+      mixlib-shellout
+    mixlib-cli (2.1.8)
+    mixlib-config (3.0.9)
+      tomlrb
+    mixlib-shellout (3.2.5)
+      chef-utils
+    overcommit (0.58.0)
       childprocess (>= 0.6.3, < 5)
       iniparse (~> 1.4)
-    parallel (1.20.1)
-    parser (3.0.1.1)
+      rexml (~> 3.2)
+    parallel (1.21.0)
+    parser (3.0.2.0)
       ast (~> 2.4.1)
-    psych (3.3.2)
     rainbow (3.0.0)
-    rake (13.0.3)
-    reek (6.0.4)
+    rake (13.0.6)
+    reek (6.0.6)
       kwalify (~> 0.7.0)
       parser (~> 3.0.0)
-      psych (~> 3.1)
       rainbow (>= 2.0, < 4.0)
     regexp_parser (2.1.1)
     rexml (3.2.5)
-    rubocop (1.15.0)
+    rubocop (1.22.1)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml
-      rubocop-ast (>= 1.5.0, < 2.0)
+      rubocop-ast (>= 1.12.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.5.0)
+    rubocop-ast (1.12.0)
       parser (>= 3.0.1.1)
     ruby-progressbar (1.11.0)
-    unicode-display_width (2.0.0)
+    tomlrb (2.0.1)
+    unicode-display_width (2.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  mdl
   overcommit
   rake
   reek
   rubocop
 
 BUNDLED WITH
-   2.2.15
+   2.2.22
