@@ -13,7 +13,7 @@ RUN cd jsonnet && \
     make
 
 
-FROM ruby:2.7-alpine
+FROM ruby:3.1-alpine
 
 COPY --from=builder /opt/jsonnet/jsonnetfmt /usr/local/bin
 
