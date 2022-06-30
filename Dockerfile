@@ -39,6 +39,8 @@ RUN bundle install --jobs 4
 # Set a fake git identity
 RUN git config --global user.name "John Doe"
 RUN git config --global user.email johndoe@example.com
+# Define workdir as safe.directory
+RUN git config --global --add safe.directory /usr/src/app
 
 RUN chown -R nobody:nogroup ${HOME}
 USER nobody
