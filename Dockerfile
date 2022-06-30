@@ -1,21 +1,7 @@
-FROM alpine:latest AS builder
-ENV JSONNET_VERSION="v0.16.0"
-
-RUN apk add --update \
-      build-base \
-      ca-certificates \
-      git
-
-WORKDIR /opt
-RUN git clone https://github.com/google/jsonnet
-RUN cd jsonnet && \
-    git checkout ${JSONNET_VERSION} && \
-    make
-
-
+FROM bitnami/jsonnet:0.18.0 as jsonnet
 FROM ruby:3.1-alpine
 
-COPY --from=builder /opt/jsonnet/jsonnetfmt /usr/local/bin
+COPY --from=jsonnet /opt/bitnami/jsonnet/bin/jsonnetfmt /usr/local/bin
 
 RUN apk add --no-cache --update \
       bash \
