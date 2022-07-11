@@ -56,9 +56,10 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@42863b1282f7046f6c1ec9222965bbceafae3bb8
         with:
-          context: .
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=registry,ref=ghcr.io/harmjanblok/overcommit:latest
           cache-to: type=inline
+          context: .
+          labels: ${{ steps.meta.outputs.labels }}
+          platforms: linux/amd64,linux/arm64
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
