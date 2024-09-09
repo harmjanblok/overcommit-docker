@@ -1,5 +1,5 @@
 FROM bitnami/jsonnet:0.18.0 as jsonnet
-FROM golangci/golangci-lint:v1.50.0 as golangci-lint
+FROM golangci/golangci-lint:v1.61.0 as golangci-lint
 FROM ruby:3.1-alpine
 
 COPY --from=jsonnet /opt/bitnami/jsonnet/bin/jsonnetfmt /usr/local/bin
